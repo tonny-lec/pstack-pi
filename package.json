@@ -1,0 +1,58 @@
+{
+  "name": "pstack-pi",
+  "version": "0.15.20-pi.1",
+  "type": "module",
+  "description": "Minimal Pi coding agent port of Cursor pstack",
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "pstack"
+  ],
+  "files": [
+    "extensions",
+    "lib",
+    "skills",
+    "agents",
+    "docs",
+    "provenance",
+    "README.md",
+    "LICENSE",
+    "scripts",
+    "tests",
+    "tsconfig.json",
+    "!**/node_modules/**",
+    "!**/__pycache__/**"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/pstack.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.1.0",
+    "typescript": "5.9.3",
+    "@types/node": "24.10.0",
+    "typebox": "1.3.27"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify": "python3 scripts/verify-port.py",
+    "test:upstream": "bun test --cwd skills/poteto-mode/scripts orch watch-pr check-plan.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonny-lec/pstack-pi.git"
+  },
+  "homepage": "https://github.com/tonny-lec/pstack-pi#readme",
+  "bugs": {
+    "url": "https://github.com/tonny-lec/pstack-pi/issues"
+  }
+}

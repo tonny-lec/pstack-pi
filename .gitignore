@@ -1,0 +1,9 @@
+node_modules/
+*.tgz
+.pi/
+work/
+__pycache__/
+.env
+.env.*
+!.env.example
+.DS_Store
